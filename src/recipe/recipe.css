@@ -1,0 +1,59 @@
+.Card {
+    width: 250px;
+    height: 300px;
+    margin-bottom: 2%;
+}
+
+.Cardhead {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.Cardhead .Cardimg {
+    width: 30%;
+    margin-left: 2%;
+    margin-top: 2%;
+    border-radius: 100%;
+}
+
+.Cardtitle {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.Cardbody {
+    height: 35%;
+}
+
+.Cardtext {
+    font-size: 80%;
+    height: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.buttons {
+    height: 15%;
+    display: flex;
+    width: 98%;
+    margin: 1%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.buttons * {
+    width: 48%;
+}
+
+input {
+    width: 100%;
+}
+
+.newRecipe, .newRecipeSmall {
+    width:100%;
+    height: 100%;
+}
