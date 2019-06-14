@@ -1,0 +1,27 @@
+.item {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.item .title {
+    width: 80%;
+    padding-top: 0.5%;
+}
+
+.item input {
+    width: 50%;
+}
+
+.item .buttons {
+    width: 20%;
+}
+
+.buttons * {
+    width: 50%;
+}
+
+.addButton {
+    width: 100%;
+}

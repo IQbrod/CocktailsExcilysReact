@@ -4,6 +4,8 @@ import './recipes.css';
 import axios from 'axios'
 
 export class Recipes extends Component {
+  url = "http://10.0.1.119:8080/api/v1/recipes/"
+
   state = {
     recipes: []
   }
@@ -13,7 +15,7 @@ export class Recipes extends Component {
   }
 
   get = () => {
-    axios.get("http://10.0.1.119:8080/api/v1/recipes/").then((recipes) => {
+    axios.get(this.url).then((recipes) => {
       this.setState({recipes: recipes.data})
     })
   }
@@ -22,17 +24,17 @@ export class Recipes extends Component {
     this.setState({
       recipes: this.state.recipes.filter(item => item.id !== id)
     })
-    axios.delete("http://10.0.1.119:8080/api/v1/recipes/"+id)
+    axios.delete(this.url+id)
   }
 
   add = (recipe) => {
-    axios.post("http://10.0.1.119:8080/api/v1/recipes/", {...recipe,ingredients:[{
+    axios.post(this.url, {...recipe,ingredients:[{
       "recipeId": 1,
       "ingredientId": 1,
       "name": "Dark rum (Appleton Estate Reserve)",
       "quantity": 2,
       "unit": "oz"
-    }], instructions: "Coucou"}).then(
+    }], instructions: "Coucou"}).then( () =>
       this.setState({
         recipes: this.state.recipes.concat({...recipe, id: (this.state.recipes.length+1000)})
       })
@@ -40,8 +42,7 @@ export class Recipes extends Component {
   }
 
   upt = (recipe) => {
-    console.log("Hi")
-    axios.patch("http://10.0.1.119:8080/api/v1/recipes/", recipe).then(
+    axios.patch(this.url, recipe).then( () =>
       this.get()
     )
   }

@@ -36,9 +36,9 @@ export class Recipe extends Component {
   reset = () => {
     this.props.create(this.state.recipe)
     this.setState({
-      recipe: ({name: "name", picture: "https://bit.ly/2rk3QdR", description: "description"}),
+      recipe: {name: "name", picture: "https://bit.ly/2rk3QdR", description: "description"},
       editMode: false,
-      newRecipeMode: this.props.new,
+      newRecipeMode: true,
       pendingMode: false
     })
   }
